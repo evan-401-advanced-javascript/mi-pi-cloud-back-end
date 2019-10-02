@@ -16,7 +16,7 @@ router.post('/signup', (req, res, next) => {
       res.cookie('auth', req.token);
       res.send(req.token);
     })
-    .catch(next)
+    .catch(next);
 });
 
 router.post('/signin', auth(), (req, res, next) => {

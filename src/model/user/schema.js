@@ -1,6 +1,6 @@
 'use strict';
 
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // eslint-disable-line
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -78,4 +78,4 @@ user.methods.can = function (capability) {
   return capabilities[this.role].includes(capability);
 };
 
-module.exports = mongoose.model("User", user);
+module.exports = mongoose.model('User', user);
