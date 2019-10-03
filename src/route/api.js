@@ -3,21 +3,22 @@
 const express = require('express');
 /// Use model-finder middleware to import modles
 const modelFinder = require('../middleware/model-finder.js');
-//const auth = require('../middleware/auth.js');
+const auth = require('../middleware/auth.js');
 
 const router = express.Router();
 
-//Paramater which which to run our middleware
+//define a paramater which which to run our middleware
 router.param('model', modelFinder);
 
+// define a consiszent set of routes that can be used for any model in our
 // Model directory
 
 router.get('/api/v1/:model', handleGetAll);
 router.get('/api/v1/:model/:id', handleGetOne);
 
 router.post('/api/v1/:model/', handlePost);
-router.put('/api/v1/:model/:id', handlePut);
-router.delete('/api/v1/:model/:id', handleDelete);
+router.put('/api/v1/:model/:id', handlePut)
+router.delete('/api/v1/:model/:id', handleDelete)
 
 function handleGetAll(request, response, next) {
   request.model.get()
@@ -48,7 +49,6 @@ function handlePut(request, response, next) {
     .then(results => response.json(results))
     .catch(next);
 }
-
 function handleDelete(request, response, next) {
   const id = request.params.id;
   request.model.delete(id)

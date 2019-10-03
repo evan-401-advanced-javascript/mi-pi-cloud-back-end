@@ -3,6 +3,6 @@
 const schema = require('./schema.js');
 const MongooseModel = require('../mongoose-model.js');
 
-class Users extends MongooseModel { };
+class Files extends MongooseModel { };
 
-module.exports = new Users(schema);
+module.exports = new Files(schema);
