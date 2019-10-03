@@ -12,6 +12,7 @@ const notFound = require('./middleware/not-found.js');
 
 // Routes
 const authRouter = require('./route/auth.js');
+//const apiRouter = require('./route/api');
 
 // Models
 
@@ -25,6 +26,7 @@ server.use(morgan('dev'));
 server.use(express.json());
 
 server.use(authRouter);
+// server.use(apiRouter);
 
 // refactor this
 server.use(fileUpload());
@@ -41,7 +43,7 @@ server.post('/upload', (req, res) => {
       return res.status(500).send(err);
     }
     res.json({ fileName: file.name, filePath: `/uploads/${file.name}`});
-  })
+  });
 });
 
 ///
@@ -55,4 +57,4 @@ module.exports = {
     let PORT = port || process.env.PORT || 8080;
     server.listen(PORT, () => console.log(`Listening on ${PORT}`));
   },
-}
+};
