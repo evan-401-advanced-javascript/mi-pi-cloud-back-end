@@ -14,7 +14,7 @@ server.post('/upload', (req, res) => {
   }
 
   const file = req.files.file;
-  console.log(file);
+  console.log(file.data);
   file.mv(`/Users/evan/codefellows/401/mi-pi-cloud/mi-pi-cloud-front-end/public/uploads/${file.name}`, err => {
     if(err) {
       console.error(err);

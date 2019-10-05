@@ -64,10 +64,6 @@ user.methods.generateToken = function (type) {
     type: type || 'user',
   };
 
-  // let options = {};
-  // if (type !== 'key' && !!TOKEN_EXPIRE) {
-  //   options = { expiresIn: TOKEN_EXPIRE };
-  // }
 
   return jwt.sign(token, SECRET);
 };
