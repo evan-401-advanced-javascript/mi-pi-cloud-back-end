@@ -1,8 +1,6 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
-// const path = require(path);
 
-// server level middleware libraries
 const morgan = require('morgan');
 const cors = require('cors');
 
@@ -12,39 +10,21 @@ const notFound = require('./middleware/not-found.js');
 
 // Routes
 const authRouter = require('./route/auth.js');
+const apiRouter = require('./route/api');
+const fileRouter = require('./route/file-router');
 
 // Models
 
 // const authRouter;
 const server = express();
 
-
-
 server.use(cors());
 server.use(morgan('dev'));
 server.use(express.json());
 
 server.use(authRouter);
-
-// refactor this
-server.use(fileUpload());
-server.post('/upload', (req, res) => {
-  if(req.files === null) {
-    return res.status(400).json({ msg: 'No File Uploaded'});
-  }
-
-  const file = req.files.file;
-  console.log(file);
-  file.mv(`/Users/evan/codefellows/401/mi-pi-cloud/mi-pi-cloud-front-end/public/uploads/${file.name}`, err => {
-    if(err) {
-      console.error(err);
-      return res.status(500).send(err);
-    }
-    res.json({ fileName: file.name, filePath: `/uploads/${file.name}`});
-  })
-});
-
-///
+server.use(apiRouter);
+server.use(fileRouter);
 
 server.use('*', notFound);
 server.use(errorHandler);
@@ -55,4 +35,4 @@ module.exports = {
     let PORT = port || process.env.PORT || 8080;
     server.listen(PORT, () => console.log(`Listening on ${PORT}`));
   },
-}
+};

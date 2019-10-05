@@ -1,24 +1,34 @@
 {
-  "name": "api-demo",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"**/*.js\" --fix",
+    "test": "jest",
     "start": "nodemon index.js",
-    "start:db": "mkdir -p data/db && mongod --dbpath data/db"
+    "start:db": "mkdir -p data/db && mongod --dbpath data/db",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "Evan Brecht-Curry",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.6-alpha.5",
+    "jest": "^24.9.0",
     "jsonwebtoken": "^8.5.1",
+    "lint": "^0.7.0",
+    "mongodb-memory-server": "^5.2.6",
     "mongoose": "^5.7.3",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "supertest": "^4.0.2"
   }
 }
