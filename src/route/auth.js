@@ -6,6 +6,9 @@ const router = express.Router();
 const User = require('../model/user/schema.js');
 const auth = require('../middleware/auth.js');
 
+/**
+ * allows user to sign up for a user account
+ */
 router.post('/signup', (req, res, next) => {
   let user = new User(req.body);
   user.save()
@@ -16,9 +19,12 @@ router.post('/signup', (req, res, next) => {
       res.cookie('auth', req.token);
       res.send(req.token);
     })
-    .catch(next)
+    .catch(next);
 });
 
+/**
+ * allows user to sign in using their user account
+ */
 router.post('/signin', auth(), (req, res, next) => {
   res.set('token', req.token);
   res.cookie('auth', req.token);
