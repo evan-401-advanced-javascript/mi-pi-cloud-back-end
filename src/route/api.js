@@ -8,11 +8,29 @@ const router = express.Router();
 
 router.param('model', modelFinder);
 
+/**
+ * route gets all users/files
+ */
 router.get('/api/v1/:model', handleGetAll);
+
+/**
+ * route gets one user/file
+ */
 router.get('/api/v1/:model/:id', handleGetOne);
 
+/**
+ * route adds a new user/file
+ */
 router.post('/api/v1/:model/', auth, handlePost);
+
+/**
+ * route update a user/file
+ */
 router.put('/api/v1/:model/:id', auth, handlePut);
+
+/**
+ * route deletes a new user/file
+ */
 router.delete('/api/v1/:model/:id', auth, handleDelete);
 
 function handleGetAll(request, response, next) {

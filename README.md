@@ -7,7 +7,7 @@
  ### Links and Resources
 * [submission PR](https://github.com/evan-401-advanced-javascript/mi-pi-cloud-back-end/pull/3)
 * [travis](https://www.travis-ci.com/evan-401-advanced-javascript/mi-pi-cloud-back-end)
-* [netlify](https://naughty-bose-3bb42a.netlify.com) 
+* [netlify](https://inspiring-hopper-8e7453.netlify.com) 
 * [docs]( http://localhost:6060/)
 
  ##### Exported Values and Methods

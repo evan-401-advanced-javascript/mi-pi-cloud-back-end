@@ -8,6 +8,9 @@ server.use(express.json());
 server.use(cors());
 server.use(fileUpload());
 
+/**
+ * allows users to ad files to the server using file upload
+ */
 server.post('/upload', (req, res) => {
   if(req.files === null) {
     return res.status(400).json({ msg: 'No File Uploaded'});
