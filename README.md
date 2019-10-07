@@ -5,8 +5,8 @@
  ### Author: Evan Brecht-Curry
 
  ### Links and Resources
-* [submission PR](https://github.com/evan-401-advanced-javascript/lab-34-Redux/pull/1)
-* [travis](https://www.travis-ci.com/evan-401-advanced-javascript/lab-34-Redux)
+* [submission PR](https://github.com/evan-401-advanced-javascript/mi-pi-cloud-back-end/pull/3)
+* [travis](https://www.travis-ci.com/evan-401-advanced-javascript/mi-pi-cloud-back-end)
 * [netlify](https://naughty-bose-3bb42a.netlify.com) 
 * [docs]( http://localhost:6060/)
 
@@ -17,6 +17,9 @@
 * `npx styleguidist server`
 
 #### `.env` requirements
+`PORT=8080`
+`MONGODB_URI=mongodb://localhost:27017/db`
+`SECRET=secret`
 
  #### UML
 ![UML](uml.png)

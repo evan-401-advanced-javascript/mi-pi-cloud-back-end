@@ -1,5 +1,4 @@
 const express = require('express');
-const fileUpload = require('express-fileupload');
 
 const morgan = require('morgan');
 const cors = require('cors');

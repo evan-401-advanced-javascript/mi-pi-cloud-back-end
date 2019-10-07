@@ -14,10 +14,10 @@ describe('should check error routes', () => {
     test('can create one', () => {
       let req = {};
       mockRequest.get('/totallywrong')
-        .set('Content-Type', "application/json")
+        .set('Content-Type', 'application/json')
         .then((res) => {
           expect(errorFile(req,res)).toEqual(404);
-        })
+        });
     });
   });
 });
@@ -27,7 +27,7 @@ describe( 'hits 500 on server error', () => {
     const req = {};
     const err = {};
     const res = {setHeader : (a,b) => {}, write : () => {}, end : () => {}};
-    const errorResponse = serverError(err,req,res);
+    const errorResponse = serverError(err,req,res); // eslint-disable-line
     expect(res.statusCode).toEqual(500);
   });
 });
